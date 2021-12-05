@@ -15,3 +15,44 @@ var fourPm = $("#16pm");
 var fivePm = $("#17pm");
 var sixPm = $("#18pm");
 var sevenPm = $("#19pm");
+
+var hour = moment().hours();
+var userInput;
+var hourSpan;
+
+// Date and Hour
+
+var interval = setInterval(function () {
+
+    var momentNow = moment();
+    $('#currentDay').html(momentNow.format('YYYY MMMMM DD') + ' '
+        + momentNow.format('dddd')
+            .subtring(0, 3).toUpperCase());
+
+    $('#currentDay').html(currentDate + " " + momentNow.format('hh:mm:ss A'));
+}, 100);
+
+function initPage() {
+
+    console.log("Current Hour " + hour);
+    var init9 = JSON.parse(localStorage.getItem("09:00 am"));
+    nineAm.val(init9)
+}
+
+function background() {
+    $(".form-control").each(function() {
+
+        var timeTest = parseInt($(this).attr("id"));
+        hour = parseInt(hour);
+        console.log(timeTest);
+        console.log(hour);
+
+        if (hour > timeTest) {
+            $(this).addClass("past");
+        } else if (hour < timeTest) {
+            $(this).addClass("future");
+        } else {
+            $(this).addClass("present");
+        }
+    })
+}
