@@ -15,6 +15,8 @@ var fourPm = $("#16pm");
 var fivePm = $("#17pm");
 var sixPm = $("#18pm");
 var sevenPm = $("#19pm");
+var eightPm = $("#20pm");
+var ninePm = $("#21pm");
 
 var hour = moment().hours();
 var userInput;
@@ -66,6 +68,12 @@ var interval = setInterval(function() {
 
     var init7 = JSON.parse(localStorage.getItem("07:00 pm"));
     sevenPm.val(init7);
+
+    var init8 = JSON.parse(localStorage.getItem("8:00 pm"));
+    eightPm.val(init8);
+
+    var init9P = JSON.parse(localStorage.getItem("9:00 pm"));
+    ninePm.val(init9P);
 }
 
 function background() {
