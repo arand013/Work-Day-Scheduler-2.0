@@ -17,6 +17,7 @@ var sixPm = $("#18pm");
 var sevenPm = $("#19pm");
 var eightPm = $("#20pm");
 var ninePm = $("#21pm");
+var threeAm = $("#3am");
 
 var hour = moment().hours();
 var userInput;
@@ -36,6 +37,10 @@ var interval = setInterval(function() {
   function initPage() {
 
     console.log("Current Hour " + hour);
+
+    var init3A = JSON.parse(localStorage.getItem("03:00 am"));
+    nineAm.val(init3A);
+
     var init9 = JSON.parse(localStorage.getItem("09:00 am"));
     nineAm.val(init9);
 
